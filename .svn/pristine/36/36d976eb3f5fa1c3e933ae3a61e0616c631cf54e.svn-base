@@ -1,0 +1,124 @@
+<?php
+
+namespace Metinet\Bundle\IutBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * AssociationPending
+ *
+ * @ORM\Table(name="association_pending")
+ * @ORM\Entity(repositoryClass="Metinet\Bundle\IutBundle\Entity\AssociationPendingRepository")
+ */
+class AssociationPending
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="createdAt", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="state", type="boolean")
+     */
+    private $state;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return AssociationPending
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set createdAt
+     *
+     * @param \DateTime $createdAt
+     * @return AssociationPending
+     */
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+    
+        return $this;
+    }
+
+    /**
+     * Get createdAt
+     *
+     * @return \DateTime 
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * Set state
+     *
+     * @param boolean $state
+     * @return AssociationPending
+     */
+    public function setState($state)
+    {
+        $this->state = $state;
+    
+        return $this;
+    }
+
+    /**
+     * Get state
+     *
+     * @return boolean 
+     */
+    public function getState()
+    {
+        return $this->state;
+    }
+}
